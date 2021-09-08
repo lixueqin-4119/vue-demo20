@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+   
    <input v-model="message" placeholder="edit me" />
    <br>
    <textarea v-model="message" placeholder="复选框"></textarea>
@@ -57,14 +58,15 @@
   <hr/>
   from<br>
   登陆
+   {{user}}<br>
   <form @submit.prevent="onSubmit">
    <label>
      <span>用户名：</span>
-     <input type="text" v-model="user.username" />
+     <input type="text" v-model.lazy="user.username" />
    </label>
    <label>
      <span>密码：</span>
-     <input type="password" v-model="user.password" />
+     <input type="password" v-model.trim="user.password" />
    </label>
    <button type="submit">提交</button>
   </form>
